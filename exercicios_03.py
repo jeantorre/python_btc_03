@@ -49,25 +49,25 @@ Antes de processar os dados de usuários em um sistema de recomendação, você 
 e tenha fornecido um email válido. Escreva um programa que valide essas condições e imprima "Dados de usuário válidos" ou
 o erro específico encontrado.
 '''
-import re
+# import re
 
-try:
-    idade = int(input('Digite sua idade: '))
-except ValueError:
-    print("Erro: Entrada inválida. Certifique-se de inserir números.")
+# try:
+#     idade = int(input('Digite sua idade: '))
+# except ValueError:
+#     print("Erro: Entrada inválida. Certifique-se de inserir números.")
 
-regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
-def checar_email(email):
-    if(re.fullmatch(regex, email)):
-        print('Dados de usuários válidos')
-    else:
-        print('Email inválido')
+# regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+# def checar_email(email):
+#     if(re.fullmatch(regex, email)):
+#         print('Dados de usuários válidos')
+#     else:
+#         print('Email inválido')
 
-if 18 <= idade <= 65:
-    email = input('Digite seu e-mail: ')
-    checar_email(email)
-else:
-    print('Idade inválida')
+# if 18 <= idade <= 65:
+#     email = input('Digite seu e-mail: ')
+#     checar_email(email)
+# else:
+#     print('Idade inválida')
 
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
@@ -101,8 +101,35 @@ else:
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
 
-### Exercício 14. Tentativas de Conexão
-# Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
+'''
+Exercício 14. Tentativas de Conexão
+Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
+'''
+tentativa_maxima = 8
+tentativa = 1
+while tentativa <= tentativa_maxima:
+    print(f'Tentativa {tentativa} de {tentativa_maxima}')
 
-### Exercício 15. Processamento de Dados com Condição de Parada
-# Processar itens de uma lista até encontrar um valor específico que indica a parada.
+    # if True:
+    #     print('Conexão bem sucedida!')
+    #     break
+    tentativa += 1
+
+else:
+    print(f'Falha ao conectar após {tentativa_maxima} tentativas!')
+
+
+'''
+Exercício 15. Processamento de Dados com Condição de Parada
+Processar itens de uma lista até encontrar um valor específico que indica a parada.
+'''
+# item = [1, 2, 3, 4, 5, 6, 'parar', 7, 8, 9]
+# i = 0
+
+# while i < len(item):
+#     print(f'Processando item {item[i]}')
+#     i += 1
+
+#     if item[i] == 'parar':
+#         print('Item de parada encontrado. Encerrando o processamento!')
+#         break
