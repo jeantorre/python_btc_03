@@ -92,8 +92,14 @@ o erro específico encontrado.
 
 ### Exercícios com WHILE
 
-### Exercício 11. Leitura de Dados até Flag
-# Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
+'''
+Exercício 11. Leitura de Dados até Flag
+Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
+'''
+entrada = input('Digite um valor de entrada: ')
+
+while entrada.lower() != 'sair':
+    entrada = input('Digite um valor qualquer ou "sair" para terminar: ')
 
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
@@ -105,18 +111,18 @@ o erro específico encontrado.
 Exercício 14. Tentativas de Conexão
 Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
 '''
-tentativa_maxima = 8
-tentativa = 1
-while tentativa <= tentativa_maxima:
-    print(f'Tentativa {tentativa} de {tentativa_maxima}')
+# tentativa_maxima = 8
+# tentativa = 1
+# while tentativa <= tentativa_maxima:
+#     print(f'Tentativa {tentativa} de {tentativa_maxima}')
 
-    # if True:
-    #     print('Conexão bem sucedida!')
-    #     break
-    tentativa += 1
+#     # if True:
+#     #     print('Conexão bem sucedida!')
+#     #     break
+#     tentativa += 1
 
-else:
-    print(f'Falha ao conectar após {tentativa_maxima} tentativas!')
+# else:
+#     print(f'Falha ao conectar após {tentativa_maxima} tentativas!')
 
 
 '''
