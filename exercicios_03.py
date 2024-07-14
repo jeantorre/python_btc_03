@@ -39,15 +39,35 @@ Você está analisando logs de uma aplicação e precisa filtrar mensagens com s
 Dado um registro de log em formato de dicionário como `log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}`, 
 escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
 '''
-log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}
-if log['level'] == 'ERROR':
-    print(log['message'])
+# log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}
+# if log['level'] == 'ERROR':
+#     print(log['message'])
 
-### Exercício 4: Validação de Dados de Entrada
-# Antes de processar os dados de usuários em um sistema de recomendação, 
-# você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha 
-# fornecido um email válido. Escreva um programa que valide essas condições 
-# e imprima "Dados de usuário válidos" ou o erro específico encontrado.
+'''
+Exercício 4: Validação de Dados de Entrada
+Antes de processar os dados de usuários em um sistema de recomendação, você precisa garantir que cada usuário tenha idade entre 18 e 65 anos
+e tenha fornecido um email válido. Escreva um programa que valide essas condições e imprima "Dados de usuário válidos" ou
+o erro específico encontrado.
+'''
+import re
+
+try:
+    idade = int(input('Digite sua idade: '))
+except ValueError:
+    print("Erro: Entrada inválida. Certifique-se de inserir números.")
+
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+def checar_email(email):
+    if(re.fullmatch(regex, email)):
+        print('Dados de usuários válidos')
+    else:
+        print('Email inválido')
+
+if 18 <= idade <= 65:
+    email = input('Digite seu e-mail: ')
+    checar_email(email)
+else:
+    print('Idade inválida')
 
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
